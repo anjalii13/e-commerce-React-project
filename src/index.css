@@ -13,3 +13,30 @@
   font-weight: 600;
 }
 
+/* category css */
+
+.category-container {
+  display: flex;
+  overflow-x: auto;
+  gap: 10px;
+  padding: 10px;
+
+}
+
+
+
+.category-btn {
+  white-space: nowrap;
+  padding: 8px 15px;
+  border: 1px solid rgb(231, 18, 174);
+  border-radius: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+  background-color: transparent;
+}
+
+.category-btn:hover {
+  background-color: rgb(231, 18, 174);
+  color: white;
+
+}

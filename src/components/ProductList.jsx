@@ -1,7 +1,10 @@
 import React, { useEffect } from 'react'
 import { useState } from 'react'
 import '../index.css'
+import Card from './Card'
 import ProductDetails from './ProductDetails'
+import Loading from './Loading'
+import Category from './Category'
 
 
 
@@ -11,71 +14,62 @@ const ProductList = () => {
     const [loading, setLoading] = useState(true)
     const [error, setError] = useState(false)
 
+    // ADDED: category state
+    const [selectedCategory, setSelectedCategory] = useState("all")
+
 
     async function fetchProducts() {
-        await fetch("https://fakestoreapi.com/products")
+
+        //  CHANGED: dynamic URL based on category
+        let url = "https://fakestoreapi.com/products"
+
+        if (selectedCategory !== "all") {
+            //  IMPORTANT: encode category
+            url = `https://fakestoreapi.com/products/category/${encodeURIComponent(selectedCategory)}`
+        }
+
+        await fetch(url) // CHANGED: using dynamic url
             .then(res => res.json())
-            .then(data => setProducts(data))
+            .then(data => {
+                setProducts(data)
+                setLoading(false)   
+            })
             .catch(err => {
-                console.log(err); 
-                setError(true)})
-                setLoading(false)
+                console.log(err)
+                setError(true)
+                setLoading(false)  
+            })
+
     }
 
 
-  useEffect(()=>{
+   
+
+
+    useEffect(() => {
+        setLoading(true)        
         fetchProducts()
+     }, [selectedCategory] )//[selectedCategory])      
 
-    }, [])
+
+    if (loading) return <Loading />
+    if (error) return <p>404 Page</p>
+
+    return (
+        <>
+            {/* category component */}
+            <Category setSelectedCategory={setSelectedCategory} />
 
 
-    if(loading) return <p>Loading....</p>
-if(error) return <p>404 Page</p>
-  return (
-    
-     <>  {
-      products.map((product,i) =>(
-        
-              <div className="col-lg-3 col-md-4 col-sm-6 mb-4 " key={i}>
-          
-          <div className="card h-100 shadow-sm product-card " >
-
-            <img
-              src={product.image}
-              className="card-img-top p-3"
-              style={{ height: "200px", objectFit: "contain" }}
-              alt={product.title}
-            />
-
-            <div className="card-body d-flex flex-column">
-              <h6 className="fw-bold">
-                {product.title}
-              </h6>
-
-              {/* <p className="text-muted small">
-                {product.description}View More
-              </p> */}
-
-              <h5 className="mt-auto">${product.price}</h5>
-
-              <button className="btn  text-light mt-2" style={{ backgroundColor: "rgb(231, 18, 174)" }}>
-                Add to Cart
-              </button>
-               <button className="btn  text-light mt-2" style={{ backgroundColor: "rgb(231, 18, 174)" }} onClick={() => {console.log(product.description)
-                return (<div><ProductDetails /></div>)
-               }}>
-                View More
-              </button>
-            </div>
-
-          </div>
-
-        </div>
-        
-))
-}
-</>
-  )
+            {
+                products.map((product, i) => (
+                    <div className="col-lg-3 col-md-4 col-sm-6 mb-4" key={i}>
+                        <Card product={product} />
+                    </div>
+                ))
+            }
+        </>
+    )
 }
 
 export default ProductList

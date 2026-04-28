@@ -6,7 +6,7 @@ import ProductList from '../components/ProductList'
 const Dashboard = () => {
   return (
     <div>
-      <Navbar />
+
 
 <div>
 
@@ -14,19 +14,8 @@ const Dashboard = () => {
     <div className="row">
 
       {/* Sidebar */}
-      <div className="col-md-2  text-light p-3 "style={{ backgroundColor: "rgb(251, 219, 245)", color: "white" }}>
-        <h5 style={{ color: "rgb(231, 18, 174)" }}>Filters</h5>
-
-        <input 
-          type="search" 
-          className="form-control my-3" 
-          placeholder="Search products"
-        />
-
-        <button className="btn btn-primary w-100 mb-3" style={{ backgroundColor: "rgb(231, 18, 174)", border: "none" }}>
-          Search
-        </button>
-
+      <div className="col-md-2  text-light p-3 "style={{ backgroundColor: "rgb(251, 219, 245)", color: "white", position: "sticky", top: 0, height: "100vh" }}>
+        <h5 style={{ color: "rgb(231, 18, 174)", marginBottom:'30px' }}>Filters</h5>
         <div>
           <h6 style={{ color: "rgb(231, 18, 174)" }}> Category</h6>
           <div style={{ color: "rgb(231, 18, 174)" }}><input type="checkbox" /> Men</div>
