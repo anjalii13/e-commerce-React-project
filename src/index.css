@@ -40,3 +40,21 @@
   color: white;
 
 }
+
+.light-navbar {
+  background-color: rgb(251, 219, 245);
+}
+.light-sidebar{
+  background-color: rgb(251, 219, 245);
+}
+.light-btn{
+  background-color: rgb(231, 18, 174) !important;
+  color: white !important;
+}
+.icon-light {
+  color: rgb(231, 18, 174);  /* pink */
+}
+
+.icon-dark {
+  color: white;
+}

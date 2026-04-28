@@ -1,8 +1,14 @@
 import React from 'react'
 import '../App.css'
 import { Link } from 'react-router-dom'
+import '../index.css'
+import { useContext } from 'react'
+import { ThemeContext } from '../Theme/ThemeProvider'
 
 const Card = ({ product }) => {
+  const { theme } = useContext(ThemeContext)
+
+
   return (
 
     <Link 
@@ -24,22 +30,23 @@ const Card = ({ product }) => {
 
           <h5 className="mt-auto">${product.price}</h5>
 
-          {/* prevent navigation when clicking this */}
+
           <button 
-            className="btn text-light mt-2"
-            style={{ backgroundColor: "rgb(231, 18, 174)" }}
+
+
+            className={`btn mt-2 ${theme === 'light' ? 'light-btn' : 'btn-dark'}`}
             onClick={(e) => e.preventDefault()}
           >
             Add to Cart
           </button>
 
-          {/* no need for Link here anymore */}
-          <span 
-            className="btn mt-2"
-            style={{ backgroundColor: "rgb(231, 18, 174)", color: "white" }}
+
+          <button
+            className={`btn mt-2 ${theme === 'light' ? 'light-btn' : 'btn-dark'}`}
+
           >
             View More
-          </span>
+          </button>
 
         </div>
 

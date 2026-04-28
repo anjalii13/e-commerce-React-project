@@ -1,11 +1,17 @@
-import React from 'react'
+import React, { createContext, useState } from 'react'
 
-const ThemeProvider = () => {
+
+export const ThemeContext = createContext()
+
+const ThemeProvider = ({children}) => {
+    const [theme,setTheme] = useState('light')
+
+    function toggleTheme(){
+        console.log(theme,"In provider")
+        setTheme(prev => prev == 'light' ? 'dark' :'light')
+    }
   return (
-    <div>
-      
-    </div>
+    <ThemeContext value={{theme,toggleTheme}}>{children}</ThemeContext>
   )
 }
-
 export default ThemeProvider

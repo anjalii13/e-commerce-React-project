@@ -3,7 +3,10 @@ import { Link } from 'react-router-dom'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 import ProductList from '../components/ProductList'
+import { ThemeContext } from '../Theme/ThemeProvider'
+import { useContext } from 'react'
 const Dashboard = () => {
+  const { theme } = useContext(ThemeContext)
   return (
     <div>
 
@@ -14,7 +17,9 @@ const Dashboard = () => {
     <div className="row">
 
       {/* Sidebar */}
-      <div className="col-md-2  text-light p-3 "style={{ backgroundColor: "rgb(251, 219, 245)", color: "white", position: "sticky", top: 0, height: "100vh" }}>
+      <div 
+      className={`col-md-2  p-3 ${theme === 'light' ? 'light-sidebar' : 'bg-secondary'}`}
+      style={{ backgroundColor: "rgb(251, 219, 245)", color: "white", position: "sticky", top: 0, height: "100vh" }}>
         <h5 style={{ color: "rgb(231, 18, 174)", marginBottom:'30px' }}>Filters</h5>
         <div>
           <h6 style={{ color: "rgb(231, 18, 174)" }}> Category</h6>
