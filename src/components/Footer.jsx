@@ -12,20 +12,13 @@ const Footer = () => {
 
           {/* Column 1 */}
           <div className="col-md-3">
-            <h6 className={`fw-bold ${theme === 'light' ? 'icon-light' : 'icon-dark'}`}>ONLINE SHOPPING</h6>
-            <ul className="list-unstyled mt-3">
-              <li><Link to="/men" className="footer-link">Men</Link></li>
-              <li><Link to="/women" className="footer-link">Women</Link></li>
-              <li><Link to="/kids" className="footer-link">Kids</Link></li>
-              <li><Link to="/home" className="footer-link">Home</Link></li>
-              <li><Link to="/beauty" className="footer-link">Beauty</Link></li>
-            </ul>
+            
 
-            <h6 className={`fw-bold mt-4 ${theme === 'light' ? 'icon-light' : 'icon-dark'}`}>USEFUL LINKS</h6>
+            <h6 className={`fw-bold  ${theme === 'light' ? 'icon-light' : 'icon-dark'}`}>USEFUL LINKS</h6>
             <ul className="list-unstyled mt-3">
-              <li><Link to="/blog" className="footer-link">Blog</Link></li>
-              <li><Link to="/careers" className="footer-link">Careers</Link></li>
-              <li><Link to="/sitemap" className="footer-link">Site Map</Link></li>
+              <li><Link to="https://blog.myntra.com/" className="footer-link" style={{textDecoration:'none'}}>Blog</Link></li>
+              <li><Link to="https://careers.myntra.com/" className="footer-link" style={{textDecoration:'none'}}>Careers</Link></li>
+              <li><Link to="https://www.myntra.com/sitemap" className="footer-link" style={{textDecoration:'none'}}>Site Map</Link></li>
             </ul>
           </div>
 
@@ -33,10 +26,10 @@ const Footer = () => {
           <div className="col-md-3">
             <h6 className={`fw-bold ${theme === 'light' ? 'icon-light' : 'icon-dark'}`}>CUSTOMER POLICIES</h6>
             <ul className="list-unstyled mt-3">
-              <li><Link to="/contact" className="footer-link">Contact Us</Link></li>
-              <li><Link to="/faq" className="footer-link">FAQ</Link></li>
-              <li><Link to="/terms" className="footer-link">Terms Of Use</Link></li>
-              <li><Link to="/privacy" className="footer-link">Privacy Policy</Link></li>
+              <li><Link to="https://life.myntra.com/contact/" className="footer-link" style={{textDecoration:'none'}}>Contact Us</Link></li>
+              <li><Link to="https://www.myntra.com/faqs" className="footer-link" style={{textDecoration:'none'}}>FAQ</Link></li>
+              <li><Link to="https://life.myntra.com/terms/" className="footer-link" style={{textDecoration:'none'}}>Terms Of Use</Link></li>
+              <li><Link to="https://life.myntra.com/privacy-policy/" className="footer-link" style={{textDecoration:'none'}}>Privacy Policy</Link></li>
             </ul>
           </div>
 
@@ -45,15 +38,15 @@ const Footer = () => {
 
 
             <div className="d-flex gap-2 ">
-              
+
             </div>
 
             <h6 className={`fw-bold ${theme === 'light' ? 'icon-light' : 'icon-dark'}`}>KEEP IN TOUCH</h6>
             <div className="d-flex gap-3 mt-3 fs-5">
-              <a href="#"><FaFacebookF /></a>
-              <a href="#"><FaTwitter /></a>
-              <a href="#"><FaYoutube /></a>
-              <a href="#"><FaInstagram /></a>
+              <a href="https://www.facebook.com/login/?next=https%3A%2F%2Fwww.facebook.com%2Fmyntra%2F"><FaFacebookF /></a>
+              <a href="https://x.com/myntra"><FaTwitter /></a>
+              <a href="https://www.youtube.com/channel/UCMlJjMRSKaUQhXQ_9XjCGpg"><FaYoutube /></a>
+              <a href="https://www.instagram.com/myntra/?hl=en"><FaInstagram /></a>
             </div>
           </div>
 

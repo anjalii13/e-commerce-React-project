@@ -11,38 +11,38 @@ const Dashboard = () => {
     <div>
 
 
-<div>
+      <div>
 
-  <div className="container-fluid ">
-    <div className="row">
+        <div className="container-fluid ">
+          <div className="row">
 
-      {/* Sidebar */}
-      <div 
-      className={`col-md-2  p-3 ${theme === 'light' ? 'light-sidebar' : 'bg-secondary'}`}
-      style={{ backgroundColor: "rgb(251, 219, 245)", color: "white", position: "sticky", top: 0, height: "100vh" }}>
-        <h5 className={`${theme === 'light' ? 'icon-light' : 'icon-dark'}`}>Filters</h5>
-        <div>
-          <h6 className={`${theme === 'light' ? 'icon-light' : 'icon-dark'}`}> Category</h6>
-          <div className={`${theme === 'light' ? 'icon-light' : 'icon-dark'}`}><input type="checkbox" /> Men</div>
-          <div className={`${theme === 'light' ? 'icon-light' : 'icon-dark'}`}><input type="checkbox" /> Women</div>
-          <div className={`${theme === 'light' ? 'icon-light' : 'icon-dark'}`}><input type="checkbox" /> Kids</div>
+            {/* Sidebar */}
+            <div
+              className={`col-md-2  p-3 ${theme === 'light' ? 'light-sidebar' : 'bg-secondary'}`}
+              style={{ backgroundColor: "rgb(251, 219, 245)", color: "white", position: "sticky", top: 0, height: "100vh" }}>
+              <h5 className={`mb-3 ${theme === 'light' ? 'icon-light' : 'icon-dark'}`}>Filters</h5>
+              <div>
+                <h6 className={`${theme === 'light' ? 'icon-light' : 'icon-dark'}`}> Category</h6>
+                <div className={`${theme === 'light' ? 'icon-light' : 'icon-dark'}`}><input type="checkbox" /> Men</div>
+                <div className={`${theme === 'light' ? 'icon-light' : 'icon-dark'}`}><input type="checkbox" /> Women</div>
+                <div className={`${theme === 'light' ? 'icon-light' : 'icon-dark'}`}><input type="checkbox" /> Kids</div>
+              </div>
+            </div>
+
+            {/* Products Section */}
+            <div className="col-md-10 p-4">
+              <h4 className={`mb-3 ${theme === 'light' ? 'icon-light' : 'color-dark'}`}>Products</h4>
+
+              <div className="row">
+                <ProductList />
+              </div>
+            </div>
+
+          </div>
         </div>
       </div>
 
-      {/* Products Section */}
-      <div className="col-md-10 p-4">
-        <h4  className={`mb-3 ${theme === 'light' ? 'icon-light' : 'color-dark'}`}>Products</h4>
-
-        <div className="row">
-          <ProductList />
-        </div>
-      </div>
-
-    </div>
-  </div>
-</div>
-
-<Footer />
+      <Footer />
     </div>
   )
 }

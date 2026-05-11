@@ -7,20 +7,27 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import ProductDetails from './components/ProductDetails';
 import Search from './components/Search';
 import Navbar from './components/Navbar';
+import CartProvider from './components/CartReducer/CartProvider'
+import { CartContextAPI } from './components/CartReducer/CartProvider';
+import Cart from './components/CartReducer/Cart';
+
 
 function App() {
   return (
-    <BrowserRouter>
-    <Navbar />
-      <Routes>
-        <Route path='/' element={<Login />} />
-        <Route path='/register' element={<Register />} />
-        <Route path='/dashboard' element={<Dashboard />} />
-        <Route path='/product/:id' element={<ProductDetails />} />
+    <CartProvider>
+      <BrowserRouter>
+        <Navbar />
+        <Routes>
+          <Route path='/' element={<Login />} />
+          <Route path='/register' element={<Register />} />
+          <Route path='/dashboard' element={<Dashboard />} />
+          <Route path='/product/:id' element={<ProductDetails />} />
 
-<Route path='/search' element={<Search />} />
-      </Routes>
-    </BrowserRouter>
+          <Route path='/search' element={<Search />} />
+          <Route path='/cart' element={<Cart />}></Route>
+        </Routes>
+      </BrowserRouter>
+    </CartProvider>
   );
 }
 

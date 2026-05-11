@@ -22,22 +22,30 @@
   padding: 10px;
 
 }
-.category-btn {
+.category-btn{
   white-space: nowrap;
   padding: 8px 15px;
-  border: 1px solid rgb(231, 18, 174);
-  border-radius: 20px;
+  border-radius: 20px !important;
   cursor: pointer;
   transition: 0.3s;
-  background-color: transparent;
+  background-color: transparent !important;
 }
+.category-btn-light{
+  
+  border: 1px solid rgb(231, 18, 174);
+ 
+}
+.category-btn-dark{
 
+  border: 1px solid black;
+  
+
+}
 .category-btn:hover {
   background-color: rgb(231, 18, 174);
   color: white;
 
 }
-
 .light-navbar {
   background-color: rgb(251, 219, 245);
 }
@@ -51,7 +59,19 @@
 .icon-light {
   color: rgb(231, 18, 174);  /* pink */
 }
-
 .icon-dark {
   color: white;
+}
+
+.productDetailsBody{
+  padding: '30px';
+  border-radius: '10px';
+}
+.product-light{
+  background-color: rgb(251, 219, 245);
+  color: rgb(231, 18, 174);
+}
+.product-dark{
+  background-color: white;
+  color: black;
 }

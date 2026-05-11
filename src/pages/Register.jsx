@@ -20,7 +20,7 @@ const Register = () => {
 
   return (
 
-    <div className="container mt-5 w-50 h-75 p-5 border border-1 rounded "style={{ backgroundColor: "rgb(251, 219, 245)", color: "white" }}>
+    <div className="container mt-5 w-50 h-75 p-5 border border-1 rounded " style={{ backgroundColor: "rgb(251, 219, 245)", color: "white" }}>
       <h3 className="text-center" style={{ color: "rgb(231, 18, 174)" }}>Register</h3>
       <form>
         <div className="mb-3 ">

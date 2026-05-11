@@ -21,35 +21,35 @@ const ProductList = () => {
     async function fetchProducts() {
 
         //  CHANGED: dynamic URL based on category
-        let url = "https://fakestoreapi.com/products"
+        let url = "https://dummyjson.com/products"
 
         if (selectedCategory !== "all") {
             //  IMPORTANT: encode category
-            url = `https://fakestoreapi.com/products/category/${encodeURIComponent(selectedCategory)}`
+            url = `https://dummyjson.com/products/category/${encodeURIComponent(selectedCategory)}`
         }
 
         await fetch(url) // CHANGED: using dynamic url
             .then(res => res.json())
             .then(data => {
-                setProducts(data)
-                setLoading(false)   
+                setProducts(data.products)
+                setLoading(false)
             })
             .catch(err => {
                 console.log(err)
                 setError(true)
-                setLoading(false)  
+                setLoading(false)
             })
 
     }
 
 
-   
+
 
 
     useEffect(() => {
-        setLoading(true)        
+        setLoading(true)
         fetchProducts()
-     }, [selectedCategory] )//[selectedCategory])      
+    }, [selectedCategory])//[selectedCategory])      
 
 
     if (loading) return <Loading />

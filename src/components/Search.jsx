@@ -12,17 +12,14 @@ const Search = () => {
   console.log(query)
 
   useEffect(() => {
-    fetch("https://fakestoreapi.com/products")
-      .then(res => res.json())
-      .then(data => {
-
-        const filtered = data.filter(p =>
-          p.title.toLowerCase().includes(query.toLowerCase())
-        )
-        setProducts(filtered)
-        setLoading(false)
-      })
-  }, [query])
+  fetch(`https://dummyjson.com/products/search?q=${query}`)
+    .then(res => res.json())
+    .then(data => {
+      setProducts(data.products)
+      setLoading(false)
+    })
+    .catch(() => setLoading(false))
+}, [query])
 
   if (loading) return <Loading />
 
